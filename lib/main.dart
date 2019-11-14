@@ -13,6 +13,7 @@ void main() => runApp(MaterialApp(
     ));
 
 class HomePage extends StatelessWidget {
+  
   final List<String> images = [
     "https://www.yourselfquotes.com/wp-content/uploads/2018/02/Tuesday-Thoughts-Quotes-Images.jpg",
     "https://66.media.tumblr.com/66eb5404e610e9b651f69e9a8b1016c1/tumblr_pflkknHXGp1x0hhcdo1_400.jpg",
@@ -211,8 +212,15 @@ class HomePage extends StatelessWidget {
               fontSize: 18,
             )),
       ),
+      // floatingActionButton: FloatingActionButton(
+      //   child: Icon(Icons.chat),
+      //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16.0))),
+      //   onPressed: (){
+      //   },
+      // ),
     );
   }
+  
 
   Row _buildSocialsRow() {
     return Row(
