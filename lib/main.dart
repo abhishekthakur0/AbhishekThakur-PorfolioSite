@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'dart:html' as html;
 
 void main() => runApp(MaterialApp(
       title: 'Abhishek Thakur',
@@ -230,7 +230,7 @@ class HomePage extends StatelessWidget {
           color: Colors.indigo,
           icon: Icon(FontAwesomeIcons.facebook),
           onPressed: () {
-            _launchURL("https://facebook.com/lohanidamodar");
+            html.window.open("https://www.facebook.com/abhishek0thakur/", "Facebook");
           },
         ),
         SizedBox(width: 5.0),
@@ -238,29 +238,23 @@ class HomePage extends StatelessWidget {
           color: Colors.indigo,
           icon: Icon(FontAwesomeIcons.github),
           onPressed: () {
-            _launchURL("https://github.com/kumarcops");
+            html.window.open("https://github.com/kumarcops", "Github");
           },
         ),
         SizedBox(width: 5.0),
         IconButton(
           color: Colors.red,
           icon: Icon(FontAwesomeIcons.linkedin),
-          onPressed: () {
-            _launchURL("https://www.linkedin.com/in/abhishekthakur0/");
-          },
+          onPressed:(){
+            html.window.open("https://www.linkedin.com/in/abhishekthakur0/", "LinkedIn");
+
+          }
         ),
         SizedBox(width: 10.0),
       ],
     );
   }
 
-  _launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
 
   ListTile _buildExperienceRow(
       {String company, String position, String duration}) {
